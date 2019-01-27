@@ -1,0 +1,2 @@
+class LunchBox < ApplicationRecord
+end
