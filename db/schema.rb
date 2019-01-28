@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190127125848) do
+ActiveRecord::Schema.define(version: 20190128133108) do
 
   create_table "lunch_boxes", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.date "reservation_date"
+    t.integer "user_id"
+    t.integer "lunch_box_id"
+    t.boolean "reserved"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

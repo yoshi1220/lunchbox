@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reservation_date: 
+  user_id: 1
+  lunch_box_id: 1
+  reserved: false
+
+two:
+  reservation_date: 
+  user_id: 1
+  lunch_box_id: 1
+  reserved: false
