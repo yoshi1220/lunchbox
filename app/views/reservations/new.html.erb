@@ -7,7 +7,7 @@
       <%= render 'shared/error_reservation_messages' %>
 
       <%= f.label :reservation_date %>
-      <%= f.date_field :reservation_date, class: 'form-control' %>
+      <%= f.date_field :reservation_date, class: 'form-control', value: Time.now.strftime("%Y-%m-%d") %>
 
       <%= f.label :lunch_box_id %>
       <%= f.collection_select :lunch_box_id, @lunch_boxes, :id, :name %>
