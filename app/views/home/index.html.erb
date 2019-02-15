@@ -4,4 +4,20 @@
 </div>
 
 <h2>予約状況</h2>
-<p>Find me in app/views/home/index.html.erb</p>
+<table class="table">
+  <caption>テーブルの表題</caption>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th scope="col">予約日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <th scope="row"><%= reservation.id %></th>
+        <td><%= reservation.reservation_date %><td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
