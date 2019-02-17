@@ -1,23 +1,28 @@
 <% provide(:title, "ホーム") %>
-<div class="center jumbotron">
-  <h1>お弁当予約システム</h1>
-</div>
 
-<h2>予約状況</h2>
-<table class="table">
-  <caption>テーブルの表題</caption>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th scope="col">予約日</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @reservations.each do |reservation| %>
-      <tr>
-        <th scope="row"><%= reservation.id %></th>
-        <td><%= reservation.reservation_date %><td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col-md-12">
+    <div class="center jumbotron">
+      <h1>お弁当予約システム</h1>
+    </div>
+
+    <h2>あなたの予約状況</h2>
+    <table class="table">
+      <caption>予約一覧</caption>
+      <thead>
+        <tr>
+          <th>予約日</th>
+          <th>弁当の種類</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @reservations.each do |reservation| %>
+          <tr>
+            <td><%= reservation.reservation_date %></td>
+            <td><%= reservation.lunch_box.name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
