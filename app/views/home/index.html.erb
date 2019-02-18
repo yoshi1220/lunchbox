@@ -1,7 +1,7 @@
 <% provide(:title, "ホーム") %>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-sm-12">
     <div class="center jumbotron">
       <h1>お弁当予約システム</h1>
     </div>
@@ -13,6 +13,7 @@
         <tr>
           <th>予約日</th>
           <th>弁当の種類</th>
+          <th>値段</th>
         </tr>
       </thead>
       <tbody>
@@ -20,6 +21,7 @@
           <tr>
             <td><%= reservation.reservation_date %></td>
             <td><%= reservation.lunch_box.name %></td>
+            <td><%= reservation.lunch_box.price %></td>
           </tr>
         <% end %>
       </tbody>
