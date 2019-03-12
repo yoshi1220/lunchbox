@@ -6,7 +6,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @reservation.user_id = 1
+    @reservation.user_id = current_user.id
     @reservation.reserved = true
     if @reservation.save
       flash[:success] = 'お弁当の予約が完了しました。'
