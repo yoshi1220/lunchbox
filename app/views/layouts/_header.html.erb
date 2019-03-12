@@ -3,13 +3,16 @@
     <%= link_to "お弁当予約", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to '新規予約', new_reservation_path %></li>
+        <% if current_user %>
+          <li><%= link_to '新規予約', new_reservation_path %></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
          <% if current_user %>
-          <li><%= link_to 'ログアウト', sign_out_path, method: :delete %></li>
+          <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
          <% else %>
-          <li><%= link_to 'ログイン', sign_in_path %></li>
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+          <li><%= link_to 'Sign in', sign_in_path %></li>
          <% end %>
       </ul>
     </nav>
