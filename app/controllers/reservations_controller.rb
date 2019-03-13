@@ -1,4 +1,6 @@
 class ReservationsController < ApplicationController
+  before_action :require_login
+
   def new
     @reservation = Reservation.new
     @lunch_boxes = LunchBox.all
