@@ -6,15 +6,16 @@ class User::SessionsController < ApplicationController
   def create
     @user_session = UserSession.new(user_session_params.to_h)
     if @user_session.save
-      flash[:success] = 'ログインしました。'
+      flash[:success] = 'サインインしました。'
       redirect_to "/"
     else
-      flash[:danger] = 'ログインに失敗しました。'
+      flash[:danger] = 'サインインに失敗しました。'
       render :new
     end
   end
 
   def destroy
+    flash[:success] = 'サインアウトしました。'
     current_user_session.destroy
     redirect_to "/"
   end
