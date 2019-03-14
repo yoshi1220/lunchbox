@@ -10,10 +10,12 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id
     @reservation.reserved = true
+
     if @reservation.save
       flash[:success] = 'お弁当の予約が完了しました。'
       redirect_to :root
     else
+      flash[:danger] = '予約に失敗しました。'
       render 'new'
     end
   end
