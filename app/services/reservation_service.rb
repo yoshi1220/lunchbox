@@ -1,8 +1,12 @@
 module ReservationService
   module_function
 
-  def reservation_exists(user_id, reservation_date)
-    Reservation.where(user_id: current_user.id)
+  def reservation_exists(reservation)
+    Reservation.where(user_id: reservation.user_id)
                .where('reservation_date = ?', Date.today)
+  end
+
+  def is_past_date(reservation_date)
+    reservation_date < Date.today
   end
 end
