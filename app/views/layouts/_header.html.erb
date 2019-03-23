@@ -7,6 +7,7 @@
       <nav>
         <ul class="nav navbar-nav navbar-left">
           <% if current_user %>
+            <li><%= link_to 'ホーム', root_path %></li>
             <li><%= link_to '新規予約', new_reservation_path %></li>
           <% end %>
         </ul>
