@@ -3,7 +3,8 @@ module ReservationService
 
   def reservation_exists(reservation)
     Reservation.where(user_id: reservation.user_id)
-               .where('reservation_date = ?', Date.today)
+               .where('reservation_date = ?', reservation.reservation_date)
+               .first
   end
 
   def is_past_date(reservation_date)
