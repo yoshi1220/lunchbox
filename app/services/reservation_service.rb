@@ -12,4 +12,9 @@ module ReservationService
   def is_past_date(reservation_date)
     reservation_date < Date.today
   end
+
+  # # 月ごとの注文金額を集計する
+  # def sum_up_per_three_month(reservations)
+  #   reservations.group("MONTH(reservation_date)").sum(:lunch_box.price)
+  # end
 end
