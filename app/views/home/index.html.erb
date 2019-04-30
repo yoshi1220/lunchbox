@@ -14,6 +14,7 @@
           <th>予約日</th>
           <th>弁当の種類</th>
           <th>値段</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -22,6 +23,7 @@
             <td><%= reservation.reservation_date %></td>
             <td><%= reservation.lunch_box.name %></td>
             <td><%= reservation.lunch_box.price %></td>
+            <td><%= button_to '削除', reservation, method: :delete %></td>
           </tr>
         <% end %>
       </tbody>
@@ -29,7 +31,7 @@
     <br>
     <h2>月ごとの支払い金額</h2></h2>
     <table class="table">
-      <caption>予約一覧</caption>
+      <caption>金額一覧</caption>
       <thead>
         <tr>
           <th>月</th>

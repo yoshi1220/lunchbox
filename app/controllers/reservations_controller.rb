@@ -6,6 +6,12 @@ class ReservationsController < ApplicationController
     @lunch_boxes = LunchBox.all
   end
 
+  def destroy
+    Reservation.destroy(params[:id])
+    flash[:success] = 'お弁当の予約を削除しました。'
+    redirect_to :root
+  end
+
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id
