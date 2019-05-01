@@ -7,7 +7,5 @@ class HomeController < ApplicationController
                                .order(:reservation_date)
 
     @amount_per_months = ReservationService.sum_up_per_month(current_user.id)
-
-    flash[:success] = @amount_per_months
   end
 end
