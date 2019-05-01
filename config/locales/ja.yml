@@ -205,3 +205,8 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  attributes:
+    password: パスワード
+    password_confirmation: パスワード確認
+    reservation_date: 予約日
+    lunch_box_id: お弁当

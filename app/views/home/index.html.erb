@@ -23,7 +23,7 @@
             <td><%= reservation.reservation_date %></td>
             <td><%= reservation.lunch_box.name %></td>
             <td><%= reservation.lunch_box.price %></td>
-            <td><%= button_to '削除', reservation, method: :delete %></td>
+            <td><%= button_to '削除', reservation, method: :delete, class: "btn btn-warning" %></td>
           </tr>
         <% end %>
       </tbody>

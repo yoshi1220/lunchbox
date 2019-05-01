@@ -14,7 +14,8 @@ module ReservationService
   end
 
   # # 月ごとの注文金額を集計する
-  # def sum_up_per_three_month(reservations)
-  #   reservations.group("MONTH(reservation_date)").sum(:lunch_box.price)
+  # def sum_up_per_three_month(user_id)
+  #   LunchBox.joins(:reservation).select("lunch_boxes.price, reservations.created_at")
+  #                               .where()
   # end
 end
