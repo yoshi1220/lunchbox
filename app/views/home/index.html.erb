@@ -38,7 +38,14 @@
           <th>利用金額計</th>
         </tr>
       </thead>
-
+      <tbody>
+        <% @amount_per_months.each do |amount_per_month| %>
+          <tr>
+            <td><%= amount_per_month[0] %></td>
+            <td><%= amount_per_month[1] %></td>
+          </tr>
+        <% end %>
+      </>
     </table>
   </div>
 </div>

@@ -13,9 +13,11 @@ module ReservationService
     reservation_date < Date.today
   end
 
-  # # 月ごとの注文金額を集計する
-  # def sum_up_per_three_month(user_id)
-  #   LunchBox.joins(:reservation).select("lunch_boxes.price, reservations.created_at")
-  #                               .where()
-  # end
+  # 月ごとの注文金額を集計する
+  def sum_up_per_month(user_id)
+    LunchBox.joins(:reservation)
+            .where(reservations: { user_id: user_id })
+            .group_by_month(:reservation_date, format: '%Y年%b', reverse: true)
+            .sum('price')
+  end
 end

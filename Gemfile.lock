@@ -79,6 +79,8 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (4.1.1)
+      activesupport (>= 4.2)
     guard (2.13.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, <= 4.0)
@@ -189,7 +191,7 @@ GEM
       rack (>= 1.4)
     reverse_markdown (1.1.0)
       nokogiri
-    rubocop (0.68.0)
+    rubocop (0.68.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
@@ -277,6 +279,7 @@ DEPENDENCIES
   byebug (= 9.0.6)
   coffee-rails (= 4.2.2)
   faker (= 1.7.3)
+  groupdate
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   jbuilder (= 2.7.0)
